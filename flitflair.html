@@ -1,0 +1,2541 @@
+```
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLITFLAIR</title>
+    <link rel="stylesheet" href="fit.css">
+</head>
+<body>
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#gym-plans">Gym Plans</a></li>
+            <li><a href="#diet-plans">Diet Plans</a></li>
+            <li><a href="#motion-tracking">AI Motion Tracking</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="gym-plans">
+            <h2>Gym Plans</h2>
+            <p>Select your fitness level to get started:</p>
+            <button onclick="showGymPlans('beginner')">Beginner</button>
+            <button onclick="showGymPlans('intermediate')">Intermediate</button>
+            <button onclick="showGymPlans('advanced')">Advanced</button>
+            <div id="gym-plans-content"></div>
+        </section>
+        <section id="diet-plans">
+            <h2>Diet Plans</h2>
+            <p>Select your diet preference:</p>
+            <button onclick="showDietPlans('vegetarian')">Vegetarian</button>
+            <button onclick="showDietPlans('vegan')">Vegan</button>
+            <button onclick="showDietPlans('keto')">Keto</button>
+            <div id="diet-plans-content"></div>
+        </section>
+        <section id="motion-tracking">
+            <h2>AI Motion Tracking</h2>
+            <p>Start your workout and track your movements:</p>
+            <video id="webcam" autoplay></video>
+            <button onclick="startMotionTracking()">Start Tracking</button>
+            <div id="tracking-status"></div>
+        </section>
+    </main>
+    <script src="function showGymPlans(level) {.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#gym-plans">Gym Plans</a></li>
+            <li><a href="#diet-plans">Diet Plans</a></li>
+            <li><a href="#motion-tracking">AI Motion Tracking</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="gym-plans">
+            <h2>Gym Plans</h2>
+            <p>Select your fitness level to get started:</p>
+            <button onclick="fetchGymPlans('beginner')">Beginner</button>
+            <button onclick="fetchGymPlans('intermediate')">Intermediate</button>
+            <button onclick="fetchGymPlans('advanced')">Advanced</button>
+            <div id="gym-plans-content"></div>
+        </section>
+        <section id="diet-plans">
+            <h2>Diet Plans</h2>
+            <p>Select your diet preference:</p>
+            <button onclick="fetchDietPlans('vegetarian')">Vegetarian</button>
+            <button onclick="fetchDietPlans('vegan')">Vegan</button>
+            <button onclick="fetchDietPlans('keto')">Keto</button>
+            <div id="diet-plans-content"></div>
+        </section>
+        <section id="motion-tracking">
+            <h2>AI Motion Tracking</h2>
+            <p>Start your workout and track your movements:</p>
+            <video id="webcam" autoplay></video>
+            <button onclick="startMotionTracking()">Start Tracking</button>
+            <div id="tracking-status"></div>
+        </section>
+    </main>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+    background: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+video {
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+    background: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+video {
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+
+function showGymPlans(level) {
+    const plans = {
+        beginner: 'Beginner plan: 3 days a week, full body workout.',
+        intermediate: 'Intermediate plan: 5 days a week, split routine.',
+        advanced: 'Advanced plan: 6 days a week, focused muscle groups.'
+    };
+    document.getElementById('gym-plans-content').innerText = plans[level];
+}
+
+function showDietPlans(diet) {
+    const diets = {
+        vegetarian: 'Vegetarian diet: Rich in fruits, vegetables, and grains.',
+        non veg: 'non-veg diet: includes all animal products.',
+        keto: 'Keto diet: High fat, low carb.'
+    };
+    document.getElementById('diet-plans-content').innerText = diets[diet];
+}
+
+function startMotionTracking() {
+    const video = document.getElementById('webcam');
+    const constraints = {
+        video: true
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+            video.srcObject = stream;
+        })
+        .catch((err) => {
+            console.error('Error accessing webcam:', err);
+        });
+
+    document.getElementById('tracking-status').innerText = 'Motion tracking started. (This is a placeholder for AI integration)';
+}
+
+// Placeholder for actual AI integration logic
+function aiMotionTrackingLogic() {
+    // This function should handle AI processing and motion tracking
+    // For now, it's a placeholder
+    console.log('AI motion tracking logic goes here.');
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- Ion Icons Js -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- JS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Menu -->
+    <div class="menu">
+        <div class="container flex">
+            <!-- Mobile Button -->
+            <div class="mobile-btn">
+                <ion-icon name="grid"></ion-icon>
+            </div>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/logo.png" alt="" />
+            </div>
+
+            <ul class="nav">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#why-us">Features</a></li>
+                <li class="nav-item"><a href="#explore">Explore</a></li>
+                <li class="nav-item"><a href="#discount">Register</a></li>
+            </ul>
+
+            <a href="#" class="btn">Register</a>
+        </div>
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex">
+            <div class="text">
+                <h1 class="mb">
+                    Complete Daily <br />
+                    <span>Workout</span> At Home
+                </h1>
+
+                <p class="mb">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
+                    sunt sed tempora neque molestiae corrupti nobis harum ullam eos nam!
+                </p>
+
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="" />
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary mb">Why Choose Us?</h2>
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Why Us -->
+
+    <!-- Explore -->
+    <div class="section" id="explore">
+        <div class="container flex">
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/explore.jpg" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Explore Our Fitness <br />
+                    Studio
+                </h2>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+                    esse vitae ratione quos maiores eveniet temporibus illum! Eligendi
+                    amet officia unde sint totam ut optio. Molestiae, illo quia?
+                </p>
+
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Explore -->
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+        <h2 class="primary mb">Our Professional Trainers</h2>
+        <div class="container flex">
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer1.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer2.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+
+            <div class="trainer">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer3.jpg" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Trainer -->
+
+    <!-- Testimonial -->
+    <div class="section" id="testimonial">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary">
+                    That's What Our Super <br />
+                    Client Says
+                </h2>
+
+                <br />
+                <br />
+                <br />
+
+                <div class="client">
+                    <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/client1.jpg" alt="" />
+                    <h2 class="secondary">Exelent Training</h2>
+                    <p class="tertiary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        quas voluptatem ad, repudiandae voluptates odio deleniti
+                        reiciendis in veniam quidem expedita maxime error fugit. Pariatur
+                        quasi sunt aut id. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Neque, officiis.
+                    </p>
+                </div>
+            </div>
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial -->
+
+    <!-- Discount -->
+    <div class="section" id="discount">
+        <div class="container flex">
+            <div class="visual">
+                <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/discount.png" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Fitness Classes This Summer, Pay Now And Get 25% Discount
+                </h2>
+
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maxime
+                    minus praesentium est et veniam voluptate alias excepturi minima
+                    placeat amet nostrum, eligendi, quod cum ducimus nesciunt ipsa eum,
+                    explicabo eaque obcaecati.
+                </p>
+
+                <a href="#" class="btn bt">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Discount -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container flex">
+            <p class="tertiary">
+                &copy; 2022 Programmer Cloud. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <script src="script.js"></script>
+</body>
+//Head section
+<!-- Ion Icons Js -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- JS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+//Body Section
+    <script src="script.js"></script>
+    
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button -->
+        <div class="mobile-btn">
+          <ion-icon name="grid"></ion-icon>
+        </div>
+        <div class="logo">
+          <img
+            src="2.png"
+            alt=""
+          />
+          <div class="visual">
+               <img
+                src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg"
+                alt=""
+              /></pre> 
+            
+          </div>
+          <a href="https://www.twitter.com" target="_blank">
+            <button style="background-color: green; color: white;">Login Now</button>
+            <br> </br>
+        </a>
+        
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
+
+          <p class="mb">
+            Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. At Fitflair, we believe fitness is a journey towards a happier self. Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels.
+
+Join our supportive community of like-minded individuals striving towards better health. Together, let's make every rep count and every meal nourishing. Start your transformation today with Fitflair.
+
+Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. Take control of your fitness journey with Fitflair.
+          </p>
+          <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+            <button style="background-color: blue; color: white;">Customized diet plans</button></a>
+          <br /><br />
+          <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+            <button style="background-color: blue; color: white;">Workout split</button></a>
+        <br/><br />
+          <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                <button style="background-color: blue; color: white;">BMI Calculator</button></a>
+          <br /> <br />
+    
+        
+
+        </div>
+
+        
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with FITFLARE Expert.</h3>
+          <p class="tertiary">
+          </p>
+          <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png"
+              alt=""
+            />
+          </div>
+          <h3 class="secondary mb">Best diet plans based on BMI </h3>
+          <p class="tertiary">
+          </p>
+        </p>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png"
+              alt=""
+            />
+          </div>
+
+        <h3 class="secondary mb">Best workout plans</h3>
+        <p class="tertiary">
+        </p>
+        </div>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png"
+              alt=""
+            />
+          </div>
+      </div>
+    </div>
+    <br/><br />
+    <!-- End Why Us -->
+
+
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <h3 class="secondary mb">Abdul kamil</h3>
+
+        </div>
+
+        <div class="trainer">
+          <div class="trainer">
+            <h3 class="secondary mb">Bhuveneshwar</h3>
+        </div>
+
+        <div class="trainer">
+          <h3 class="secondary mb">Anu</h3>
+
+          <div class="trainer">
+
+            <h3 class="secondary mb">Ajay</h3>
+            <p class="tertiary mb">
+            </p>
+
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p class="tertiary mb">
+                </p>
+
+                
+
+          <a href="#" class="btn-2">
+            <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.
+        </p>
+      </div>
+    </footer>
+
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Icons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .social-media-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+    
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+    
+            .social-icon.twitter {
+                background-color: #1da1f2;
+            }
+    
+            .social-icon.instagram {
+                background-color: #e1306c;
+            }
+    
+            .social-icon.linkedin {
+                background-color: #0077b5;
+            }
+    
+            .social-icon:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </body>
+    </html>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <style>
+      body{background-color: gray;}
+    </style>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button -->
+        <div class="mobile-btn">
+          <ion-icon name="grid"></ion-icon>
+        </div>
+        <div class="logo">
+        
+          <img
+            src="3.png"
+            alt=""
+          />
+          <div class="visual">
+               <img
+                src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg"
+                alt=""
+              /></pre> 
+            
+          </div>
+          <a href="https://www.twitter.com" target="_blank">
+            <button style="background-color:orange; color: white;">Login Now</button>
+            <br> </br>
+        </a>
+        
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
+
+          <p class="mb">
+            Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. At Fitflair, we believe fitness is a journey towards a happier self. Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels.
+
+Join our supportive community of like-minded individuals striving towards better health. Together, let's make every rep count and every meal nourishing. Start your transformation today with Fitflair.
+
+Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. Take control of your fitness journey with Fitflair.
+          </p>
+          <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+            <button style="background-color: orange; color: white;">Customized diet plans</button></a>
+          <br /><br />
+          <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+            <button style="background-color: orange; color: white;">Workout split</button></a>
+        <br/><br />
+          <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                <button style="background-color:orange; color: white;">BMI Calculator</button></a>
+          <br /> <br />
+    
+        
+
+        </div>
+
+        
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with FITFLARE Expert.</h3>
+          <p class="tertiary">
+          </p>
+          <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png"
+              alt=""
+            />
+          </div>
+          <h3 class="secondary mb">Best diet plans based on BMI </h3>
+          <p class="tertiary">
+          </p>
+        </p>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png"
+              alt=""
+            />
+          </div>
+
+        <h3 class="secondary mb">Best workout plans</h3>
+        <p class="tertiary">
+        </p>
+        </div>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png"
+              alt=""
+            />
+          </div>
+      </div>
+    </div>
+    <br/><br />
+    <!-- End Why Us -->
+
+
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <h3 class="secondary mb">Abdul kamil</h3>
+
+        </div>
+
+        <div class="trainer">
+          <div class="trainer">
+            <h3 class="secondary mb">Bhuveneshwar</h3>
+        </div>
+
+        <div class="trainer">
+          <h3 class="secondary mb">Anu</h3>
+
+          <div class="trainer">
+
+            <h3 class="secondary mb">Ajay</h3>
+            <p class="tertiary mb">
+            </p>
+
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p class="tertiary mb">
+                </p>
+
+                
+
+          <a href="#" class="btn-2">
+            <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.
+        </p>
+      </div>
+    </footer>
+
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Icons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .social-media-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+    
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+    
+            .social-icon.twitter {
+                background-color: #1da1f2;
+            }
+    
+            .social-icon.instagram {
+                background-color: #e1306c;
+            }
+    
+            .social-icon.linkedin {
+                background-color: #0077b5;
+            }
+    
+            .social-icon:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </body>
+    </html>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <div class="input-fields">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter weight in kilograms">
+      <label for="height">Height (m):</label>
+      <input type="number" id="height" placeholder="Enter height in meters">
+    </div>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  
+  </head>
+  <body>
+    <centre>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button -->
+        <div class="mobile-btn">
+          <ion-icon name="grid"></ion-icon>
+        </div>
+        <div class="logo">
+          <style>
+            div{background-color: gray;}
+          </style>
+          <img
+            src="12.jpg"
+            alt=""
+          />
+          <div class="visual">
+               <img
+                src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg"
+                alt=""
+            
+            </pre> 
+            
+          </div>
+          <a href="https://www.twitter.com" target="_blank">
+            <button style="background-color:orange; color: white;">Login Now</button>
+            <br> </br>
+        </a>
+        
+        
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
+
+          <p class="mb">
+            Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. At Fitflair, we believe fitness is a journey towards a happier self. Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels.
+
+Join our supportive community of like-minded individuals striving towards better health. Together, let's make every rep count and every meal nourishing. Start your transformation today with Fitflair.
+
+Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. Take control of your fitness journey with Fitflair.
+          </p>
+          <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+            <button style="background-color:orange; color: white;">Customized diet plans</button></a>
+          <br /><br />
+          <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+            <button style="background-color:orange; color: white;">Workout split</button></a>
+        <br/><br />
+          <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                <button style="background-color: orange; color: white;">BMI Chart</button></a>
+          <br /> <br />
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>BMI Calculator</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+            
+
+            
+          
+            <a href="file:///C:/Users/Hp/Desktop/flitflair/flitflair.html" target="_blank">
+            <button style="background-color: orange; color: white;">BMI Calculator</button></a>
+            </style>
+          
+          </body>
+          </html>
+         
+        
+
+        </div>
+
+        
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with FITFLARE Expert.</h3>
+          <p class="tertiary">
+          </p>
+          <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png"
+              alt=""
+            />
+          </div>
+          <h3 class="secondary mb">Best diet plans based on BMI </h3>
+          <p class="tertiary">
+          </p>
+        </p>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png"
+              alt=""
+            />
+          </div>
+
+        <h3 class="secondary mb">Best workout plans</h3>
+        <p class="tertiary">
+        </p>
+        </div>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png"
+              alt=""
+            />
+          </div>
+      </div>
+    </div>
+    <br/><br />
+    <!-- End Why Us -->
+
+
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <h3 class="secondary mb">Abdul kamil</h3>
+
+        </div>
+
+        <div class="trainer">
+          <div class="trainer">
+            <h3 class="secondary mb">Bhuveneshwar</h3>
+        </div>
+
+        <div class="trainer">
+          <h3 class="secondary mb">Anu</h3>
+
+          <div class="trainer">
+
+            <h3 class="secondary mb">Ajay</h3>
+            <p class="tertiary mb">
+            </p>
+
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p class="tertiary mb">
+                </p>
+
+                
+
+          <a href="#" class="btn-2">
+            <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.
+        </p>
+      </div>
+    </footer>
+
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Icons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .social-media-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+    
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+    
+            .social-icon.twitter {
+                background-color: #1da1f2;
+            }
+    
+            .social-icon.instagram {
+                background-color: #e1306c;
+            }
+    
+            .social-icon.linkedin {
+                background-color: #0077b5;
+            }
+    
+            .social-icon:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+      </centre>
+    </body>
+    </html>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <div class="input-fields">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter weight in kilograms">
+      <label for="height">Height (m):</label>
+      <input type="number" id="height" placeholder="Enter height in meters">
+    </div>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .input-fields {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #result {
+    margin-top: 20px;
+  }
+
+
+  function calculateBMI() {
+    var weight = document.getElementById('weight').value;
+    var height = document.getElementById('height').value;
+  
+    if (weight === '' || height === '') {
+      alert('Please enter both weight and height.');
+      return;
+    }
+  
+    var bmi = weight / (height * height);
+    var interpretation;
+  
+    if (bmi < 18.5) {
+      interpretation = 'Underweight';
+    } else if (bmi < 25) {
+      interpretation = 'Normal weight';
+    } else if (bmi < 30) {
+      interpretation = 'Overweight';
+    } else {
+      interpretation = 'Obese';
+    }
+  
+    document.getElementById('result').innerHTML = 'Your BMI is: ' + bmi.toFixed(2) + '<br>' + 'You are categorized as: ' + interpretation;
+  }
+
+  <!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  
+  </head>
+  <body>
+    <centre>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button -->
+        <div class="mobile-btn">
+          <ion-icon name="grid"></ion-icon>
+        </div>
+        <div class="logo">
+          <style>
+            div{background-color: gray;}
+          </style>
+          <img
+            src="12.jpg"
+            alt=""
+          />
+          <div class="visual">
+               <img
+                src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg"
+                alt=""
+            
+            </pre> 
+            
+          </div>
+          <a href="https://www.twitter.com" target="_blank">
+            <button style="background-color:orange; color: white;">Login Now</button>
+            <br> </br>
+        </a>
+        
+        
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
+
+          <p class="mb">
+            Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. At Fitflair, we believe fitness is a journey towards a happier self. Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels.
+
+Join our supportive community of like-minded individuals striving towards better health. Together, let's make every rep count and every meal nourishing. Start your transformation today with Fitflair.
+
+Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. Take control of your fitness journey with Fitflair.
+          </p>
+          <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+            <button style="background-color:orange; color: white;">Customized diet plans</button></a>
+          <br /><br />
+          <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+            <button style="background-color:orange; color: white;">Workout split</button></a>
+        <br/><br />
+          <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                <button style="background-color: orange; color: white;">BMI Chart</button></a>
+          <br /> <br />
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>BMI Calculator</title>
+            <link rel="stylesheet" href="styles.css">
+          </head>
+          <body>
+            
+
+            
+          
+            <a href="file:///C:/Users/Hp/Desktop/flitflair/flitflair.html" target="_blank">
+            <button style="background-color: orange; color: white;">BMI Calculator</button></a>
+            </style>
+          
+          </body>
+          </html>
+         
+        
+
+        </div>
+
+        
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with FITFLARE Expert.</h3>
+          <p class="tertiary">
+          </p>
+          <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png"
+              alt=""
+            />
+          </div>
+          <h3 class="secondary mb">Best diet plans based on BMI </h3>
+          <p class="tertiary">
+          </p>
+        </p>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png"
+              alt=""
+            />
+          </div>
+
+        <h3 class="secondary mb">Best workout plans</h3>
+        <p class="tertiary">
+        </p>
+        </div>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png"
+              alt=""
+            />
+          </div>
+      </div>
+    </div>
+    <br/><br />
+    <!-- End Why Us -->
+
+
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <h3 class="secondary mb">Abdul kamil</h3>
+
+        </div>
+
+        <div class="trainer">
+          <div class="trainer">
+            <h3 class="secondary mb">Bhuveneshwar</h3>
+        </div>
+
+        <div class="trainer">
+          <h3 class="secondary mb">Anu</h3>
+
+          <div class="trainer">
+
+            <h3 class="secondary mb">Ajay</h3>
+            <p class="tertiary mb">
+            </p>
+
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p class="tertiary mb">
+                </p>
+
+                
+
+          <a href="#" class="btn-2">
+            <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.
+        </p>
+      </div>
+    </footer>
+
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Icons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .social-media-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+    
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+    
+            .social-icon.twitter {
+                background-color: #1da1f2;
+            }
+    
+            .social-icon.instagram {
+                background-color: #e1306c;
+            }
+    
+            .social-icon.linkedin {
+                background-color: #0077b5;
+            }
+    
+            .social-icon:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+      </centre>
+    </body>
+    </html>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLITFLAIR</title>
+</head>
+<body>
+    <center>
+        <hr1>FLITFLAIR</hr1> <br>
+    <hr5> Training | Tech news | Freshers guide</hr5>
+    <p>"Fitness is not a destination; it's a journey of self-discovery and growth."</p>
+
+    <hr>
+    </center>
+
+    
+    
+    <center>
+
+        <hr1> Registration Form</hr1> 
+        <form>
+            <table>
+        <tr>
+            <td>Name:</td> <td ><input tyype="text" placeholder="Enter your name"></td>
+        </tr>
+        <tr>
+            <td>Age:</td> <td ><input type="numbers" placeholder="Enter your age"></td>
+        
+        </tr>
+        <tr>
+            <td> Gender:</td>
+            <td>
+                <input type="radio" name="Gender" >Male
+                <input type="radio" name="Gender" >Female
+            </td>
+        <tr>
+            <td>Email:</td> <td><input type="email" placeholder="Enter your email" ></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit"> <input type="reset">
+            </td>
+        </tr>
+        </tr>
+        </table>
+        </form>
+        </center>
+        <hr>
+        <link rel ="stylesheet" href="style.css">
+
+
+        <!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  
+  </head>
+  <body>
+    <centre>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button --
+        <div class="mobile-btn">
+          <ion-icon name="grid"></ion-icon>
+        </div>
+        <div class="logo">
+          <style>
+            div{background-color: gray;}
+          </style>
+          <img
+            src="12.jpg"
+            alt=""
+          />
+          <div class="visual">
+               <img
+                src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg"
+                alt=""
+            
+            </pre> 
+            
+          </div>
+          <a href="https://www.twitter.com" target="_blank">
+            <button style="background-color:orange; color: white;">Login Now</button>
+            <br> </br>
+        </a>
+        
+        
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
+
+          <p class="mb">
+            Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. At Fitflair, we believe fitness is a journey towards a happier self. Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels.
+
+Join our supportive community of like-minded individuals striving towards better health. Together, let's make every rep count and every meal nourishing. Start your transformation today with Fitflair.
+
+Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. Take control of your fitness journey with Fitflair.
+          </p>
+          <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+            <button style="background-color:orange; color: white;">Customized diet plans</button></a>
+          <br /><br />
+          <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+            <button style="background-color:orange; color: white;">Workout split</button></a>
+        <br/><br />
+          <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                <button style="background-color: orange; color: white;">BMI Chart</button></a>
+          <br /> <br />
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>BMI Calculator</title>
+            <link rel="stylesheet" href="styles.css">
+          </head>
+          <body>
+            
+
+            
+          
+            <a href="file:///C:/Users/Hp/Desktop/flitflair/flitflair.html" target="_blank">
+            <button style="background-color: orange; color: white;">BMI Calculator</button></a>
+            </style>
+          
+          </body>
+          </html>
+         
+        
+
+        </div>
+
+        
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with FITFLARE Expert.</h3>
+          <p class="tertiary">
+          </p>
+          <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png"
+              alt=""
+            />
+          </div>
+          <h3 class="secondary mb">Best diet plans based on BMI </h3>
+          <p class="tertiary">
+          </p>
+        </p>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png"
+              alt=""
+            />
+          </div>
+
+        <h3 class="secondary mb">Best workout plans</h3>
+        <p class="tertiary">
+        </p>
+        </div>
+        <div class="visual">
+            <img
+              src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png"
+              alt=""
+            />
+          </div>
+      </div>
+    </div>
+    <br/><br />
+    <!-- End Why Us -->
+
+
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <h3 class="secondary mb">Abdul kamil</h3>
+
+        </div>
+
+        <div class="trainer">
+          <div class="trainer">
+            <h3 class="secondary mb">Bhuveneshwar</h3>
+        </div>
+
+        <div class="trainer">
+          <h3 class="secondary mb">Anu</h3>
+
+          <div class="trainer">
+
+            <h3 class="secondary mb">Ajay</h3>
+            <p class="tertiary mb">
+            </p>
+
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p class="tertiary mb">
+                </p>
+
+                
+
+          <a href="#" class="btn-2">
+            <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.
+        </p>
+      </div>
+    </footer>
+
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Media Icons</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .social-media-icons {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 20px 0;
+            }
+    
+            .social-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #333;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+                transition: background-color 0.3s ease;
+            }
+    
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+    
+            .social-icon.twitter {
+                background-color: #1da1f2;
+            }
+    
+            .social-icon.instagram {
+                background-color: #e1306c;
+            }
+    
+            .social-icon.linkedin {
+                background-color: #0077b5;
+            }
+    
+            .social-icon:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="social-media-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+      </centre>
+    </body>
+    </html>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITFLARE</title>
+    <link rel="icon" type="avif file" href="C:\Users\Hp\Downloads\Fit White Transparent, Fitness Red Icon, Icons Fitness, Red Icons, Muscle Clipart PNG Image For Free Download.jpeg"/>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- BMI Calculator CSS -->
+    <link rel="stylesheet" href="css/bmi.css">
+    <style>
+        body {
+            background-color: firebrick;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header {
+            text-align: center;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px auto;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+        .header h1 {
+            font-size: 2.5rem; /* Adjust the size as needed */
+            color: firebrick;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .header p {
+            font-size: 1.1rem; /* Slightly larger font size for better readability */
+            color: #333;
+            line-height: 1.6; /* Improve readability with line-height */
+            margin: 20px 0;
+        }
+        .header a button {
+            background-color: blue;
+            color: white;
+            padding: 15px 30px; /* Increased padding for a bigger button */
+            border: none;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem; /* Increased font size */
+            margin: 10px 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .header a button:hover {
+            background-color: darkblue;
+            transform: scale(1.05);
+        }
+
+        /* Styles for the "Why Choose Us" section */
+        #why-us {
+            background-color: #ffffff; /* White background for contrast */
+            color: #333; /* Text color */
+            padding: 30px; /* Padding around the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            margin: 20px auto; /* Margin for centering */
+            max-width: 1200px; /* Maximum width */
+        }
+
+        #why-us h2.primary {
+            font-size: 2rem; /* Font size for heading */
+            color: #d32f2f; /* Red color */
+            text-align: center; /* Center-align heading */
+            margin-bottom: 20px; /* Margin below heading */
+        }
+
+        #why-us h3.secondary {
+            font-size: 1.5rem; /* Font size for subheadings */
+            color: #d32f2f; /* Red color */
+            text-align: center; /* Center-align subheadings */
+            margin-bottom: 15px; /* Margin below subheading */
+        }
+
+        #why-us .visual img {
+            max-width: 100%; /* Ensure images are responsive */
+            border-radius: 10px; /* Rounded corners for images */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+        <script src="script.js"></script>
+
+        .bmi-container {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            padding: 20px; /* Padding inside the container */
+            margin: 20px auto;
+            max-width: 300px; /* Limit the width */
+            text-align: center; /* Center-align text */
+        }
+
+        .bmi-container h2.bmi-header {
+            font-size: 1.5rem; /* Font size for header */
+            color: firebrick; /* Red color */
+            margin-bottom: 10px; /* Margin below header */
+        }
+
+        .bmi-container label, .bmi-container input, .bmi-container button {
+            display: block;
+            margin: 10px auto; /* Center-align elements */
+            width: 90%; /* Limit width */
+        }
+
+        .bmi-container input, .bmi-container button {
+            padding: 10px; /* Padding inside input and button */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border for inputs */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for inputs and button */
+        }
+
+        .bmi-container button {
+            background-color: blue; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .bmi-container button:hover {
+            background-color: darkblue; /* Darker button color on hover */
+        }
+
+        .result {
+            font-size: 1.2rem; /* Font size for result */
+            color: firebrick; /* Red color for result */
+            margin-top: 10px; /* Margin above result */
+        }
+
+        /* Social Media Icons */
+        .social-media-icons {
+            position: fixed; /* Fixed position to stay visible on the side of the screen */
+            bottom: 20px; /* Adjust position from the bottom */
+            right: 20px; /* Adjust position from the right */
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between icons */
+        }
+
+        .social-media-icons a {
+            background-color: #fff; /* Background color for icons */
+            border-radius: 50%; /* Circular shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Icon size */
+            height: 60px; /* Icon size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+            border: 2px solid firebrick; /* Border color */
+        }
+
+        .social-media-icons a:hover {
+            background-color: #f1f1f1; /* Background color on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        .social-media-icons i {
+            font-size: 24px; /* Icon size */
+            color: #333; /* Icon color */
+        }
+
+        .social-icon.facebook i {
+            color: #3b5998; /* Facebook color */
+        }
+
+        .social-icon.twitter i {
+            color: #1da1f2; /* Twitter color */
+        }
+
+        .social-icon.instagram i {
+            color: #e4405f; /* Instagram color */
+        }
+
+        .social-icon.linkedin i {
+            color: #0077b5; /* LinkedIn color */
+        }
+
+        /* Attractive styling for trainer boxes */
+        .trainer {
+            background-color: white;
+            border: 2px solid #e12b2b; /* Red border */
+            border-radius: 10px; /* Rounded corners */
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+        }
+
+        .trainer h3 {
+            color: #cc0000; /* Red color for names */
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .trainer:hover {
+            background-color: #f8d7da; /* Light red background on hover */
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Menu -->
+    <div class="menu">
+        <div class="container flex">
+            <!-- Mobile Button -->
+            <div class="mobile-btn">
+                <ion-icon name="grid"></ion-icon>
+            </div>
+            <div class="logo">
+                <img src="inkpx-word-art.png" alt="">
+                <div class="visual">
+                    <img src="https://t3.ftcdn.net/jpg/07/01/85/52/240_F_701855257_njv3qnTolTArP2p7El0doT7ucbrk989a.jpg" alt="">
+                </div>
+                <a href="C:\Users\hp\desktop\Anu\aaa.html" target="_blank">
+
+
+                <button id="login-button" style="background-color: green; color: white; padding: 20px 40px; font-size: 1.2rem;">Login Now</button>
+            </div>
+        </div>
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex">
+            <div class="text">
+                <h1 class="mb">FITFLARE - A portal for <span>a healthy living</span></h1>
+                <p class="mb">
+                    * Welcome to Fitflair, your ultimate destination for achieving your fitness goals and living a healthier life. <br><br>
+                    * At Fitflair, we believe fitness is a journey towards a happier self. <br><br>
+                    * Whether you're a seasoned athlete or a beginner, we're here to guide you with expert advice, personalized workout plans, nutritious recipes, and motivational content. <br><br>
+                    * From strength training to yoga, and cardio to mindfulness, we cater to all fitness levels. <br><br>
+                    * Join our supportive community of like-minded individuals striving towards better health. <br><br>
+                    * Together, let's make every rep count and every meal nourishing. <br><br>
+                    * Start your transformation today with Fitflair. <br><br>
+                    * Introducing our latest feature: BMI tracking! Our app now includes a tool to monitor your Body Mass Index (BMI). <br><br>
+                    * Input your height and weight to get instant feedback, set realistic goals, and track your progress with precision. <br><br>
+                    * Take control of your fitness journey with Fitflair.
+                </p>
+                <a href="https://darebee.com/images/workouts/santa-workout.jpg" target="_blank">
+                    <button>Customized diet plans</button>
+                </a>
+                <br><br>
+                <a href="https://cdn.shopify.com/s/files/1/1283/2557/files/Bodybuilding_Splits_be15a89b-16ec-46cb-b24b-0a77050e258d_1024x1024.png?v=1621987028" target="_blank">
+                    <button>Workout split</button>
+                </a>
+                <br><br>
+                <a href="https://www.hsph.harvard.edu/wp-content/uploads/sites/56/2012/10/bmi_chart.jpg" target="_blank">
+                    <button>BMI Chart</button>
+                </a>
+                <br><br>
+                
+                <a href="C:\Users\hp\desktop\Anu\flitflair.html" target="_blank">
+                
+                    <button>BMI calculator</button>
+                </a>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Detection Using Camera</title>
+    <style>
+        #canvas {
+            border: 2px solid black;
+            width: 640px;
+            height: 480px;
+        }
+        #video {
+            display: none;
+        }
+        .message {
+            color: red;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Motion Sensor Using Camera</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <p id="motionDetected" class="message"></p>
+
+    <script>
+        let video = document.getElementById('video');
+        let canvas = document.getElementById('canvas');
+        let context = canvas.getContext('2d');
+        let motionDetectedMessage = document.getElementById('motionDetected');
+
+        // Access the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function(err) {
+                console.log("An error occurred: " + err);
+            });
+
+        let lastImageData;
+
+        function detectMotion() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            let imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+            if (lastImageData) {
+                let diff = getFrameDifference(lastImageData, imageData);
+                if (diff > 10000) { // adjust sensitivity here
+                    motionDetectedMessage.textContent = "Motion Detected!";
+                } else {
+                    motionDetectedMessage.textContent = "";
+                }
+            }
+
+            lastImageData = imageData;
+            requestAnimationFrame(detectMotion);
+        }
+
+        function getFrameDifference(data1, data2) {
+            let total = 0;
+            for (let i = 0; i < data1.data.length; i += 4) {
+                let rDiff = Math.abs(data1.data[i] - data2.data[i]);
+                let gDiff = Math.abs(data1.data[i + 1] - data2.data[i + 1]);
+                let bDiff = Math.abs(data1.data[i + 2] - data2.data[i + 2]);
+                total += (rDiff + gDiff + bDiff);
+            }
+            return total;
+        }
+
+        video.addEventListener('play', function() {
+            detectMotion();
+        });
+    </script>
+</body>
+</html>
+
+                    
+                </script>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary mb">Why Choose Us?</h2>
+                <h3 class="secondary mb">Consultation with FITFLARE Expert.</h3>
+                <div class="visual">
+                    <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="">
+                </div>
+                <h3 class="secondary mb">Best diet plans based on BMI</h3>
+                <div class="visual">
+                    <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png" alt="">
+                </div>
+                <h3 class="secondary mb">Best workout plans</h3>
+                <div class="visual">
+                    <img src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Why Us -->
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+        <h2 class="primary mb">Our Professional Trainers</h2>
+        <div class="container flex">
+            <div class="trainer">
+                <h3 class="secondary mb">Abdul Kamil</h3>
+                <p>(abdulkamil2580@gmail.com)</p>
+            </div>
+            <div class="trainer">
+                <h3 class="secondary mb">Bhuvaneshwar</h3>
+                <p>(bhuvan987@gmail.com)</p>
+            </div>
+            <div class="trainer">
+                <h3 class="secondary mb">Anu</h3>
+                <p>(anu876@gmail.com)</p>
+            </div>
+            <div class="trainer">
+                <h3 class="secondary mb">Ajay</h3>
+                <p>(ajay987@gmail.com)</p>
+            </div>
+            <div class="trainer">
+                <h3 class="secondary mb">Akhil</h3>
+                <p>(akhil870@gmail.com)</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Trainer -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container flex">
+            <p class="tertiary">&copy; 2024 Programmer Cloud. All Rights Reserved SJCE college.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Social Media Icons -->
+    <div class="social-media-icons">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+    <!-- End Social Media Icons -->
+
+    <!-- Ion Icons JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <!-- JavaScript for login button -->
+    <script>
+        document.getElementById('login-button').onclick = function() {
+            document.querySelector('form').style.display = 'block'; // Show the login form
+        };
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLITFLAIR</title>
+    <link rel="stylesheet" href="hello.css">
+</head>
+<body>
+    <center>
+        <h1>FLITFLAIR</h1>
+        <h5>Training | Tech news | Freshers guide</h5>
+        <p>"Fitness is not a destination; it's a journey of self-discovery and growth."</p>
+        <hr>
+    </center>
+
+    <center>
+        <h1>LOGIN</h1>
+        <form>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="number" placeholder="Enter your age"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="Gender"> Male
+                        <input type="radio" name="Gender"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" placeholder="Enter your email"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit">
+                        <input type="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <hr>
+</body>
+</html>
+
+/* CSS for FLITFLAIR */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #db0925;
+    margin: 0;
+    padding: 0;
+}
+
+center {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 0;
+}
+
+h5 {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    margin-top: -10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+hr {
+    border: 1px solid #ddd;
+    width: 80%;
+    margin: 20px auto;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+
+```
